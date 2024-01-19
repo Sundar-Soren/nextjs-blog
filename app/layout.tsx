@@ -7,7 +7,7 @@ import { auth } from "@/auth";
 import { SessionProvider } from "next-auth/react";
 import { QueryProvider } from "@/providers/react-query-provider";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["cyrillic"],
   variable: "--sans-serif",
 });
