@@ -8,8 +8,8 @@ import { SessionProvider } from "next-auth/react";
 import { QueryProvider } from "@/providers/react-query-provider";
 
 export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ["cyrillic"],
+  variable: "--sans-serif",
 });
 
 export const metadata: Metadata = {
