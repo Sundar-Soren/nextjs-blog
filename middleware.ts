@@ -21,7 +21,6 @@ export default auth((req) => {
   if (isApiAuthRoute || isPublicDynamicRote) {
     return null;
   }
-  console.log(nextUrl.pathname);
 
   if (isAuthRoute) {
     if (isLoggedIn) {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ToastProvider } from "@/providers/toast-provider";
@@ -7,10 +7,7 @@ import { auth } from "@/auth";
 import { SessionProvider } from "next-auth/react";
 import { QueryProvider } from "@/providers/react-query-provider";
 
-const fontSans = FontSans({
-  subsets: ["cyrillic"],
-  variable: "--sans-serif",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,12 +24,7 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <html lang="en">
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
+        <body className={inter.className}>
           <ToastProvider />
           <QueryProvider>{children}</QueryProvider>
         </body>
